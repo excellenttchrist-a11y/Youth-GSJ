@@ -384,7 +384,46 @@ grid-template-columns:1fr;
 nav ul{
 display:none;
 }
+@media (max-width:768px){
 
+    /* sembunyikan menu desktop */
+    nav ul{
+        display:none;
+    }
+
+    /* sembunyikan tombol gabung */
+    .btn-nav{
+        display:none;
+    }
+
+    /* tampilkan hamburger */
+    .menu-toggle{
+        display:block;
+        font-size:30px;
+        color:white;
+        cursor:pointer;
+        margin-left:auto;
+    }
+
+    /* logo lebih kecil */
+    .logo{
+        font-size:18px !important;
+    }
+
+    nav svg{
+        width:35px;
+        height:35px;
+    }
+
+    /* rapikan navbar */
+    nav{
+        padding:20px 5%;
+    }
+
+}
+.menu-toggle{
+    display:none;
+}
 }
 
 </style>
@@ -412,10 +451,11 @@ Youth Germita Syalom
 </ul>
 </ul>
 
-<a href="#" class="btn-nav">
+<a href="https://whatsapp.com/channel/0029VbCsYRh47Xe4QPcn9I2u" class="btn-nav">
 Gabung
 </a>
-</div>
+
+<div class="menu-toggle">☰</div>
 </nav>
 
 <section class="hero">
