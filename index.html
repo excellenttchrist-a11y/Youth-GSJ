@@ -692,14 +692,14 @@ terang Kristus di mana pun kami berada.
 <div class="feature-card">
 <div class="slider-card">
 
-<button class="prev" onclick="prevSlide()">
+<button class="prev" onclick="prevSlideKebersamaan()">
 ❮
 </button>
 <img
 id="kebersamaan-slider"
 src="images/Kebersamaan.png"
 alt="Kebersamaan">
-<button class="next" onclick="nextSlide()">
+<button class="next" onclick="nextSlideKebersamaan()">
 ❯
 </button>
 </div>
@@ -811,21 +811,21 @@ Membangun relasi dan persahabatan baru.
 
 const kebersamaan = [
 
-'images/kebersamaan.png',
-'images/kebersamaan (2).png',
-'images/kebersamaan (3).png',
-'images/kebersamaan (4).png',
-'images/kebersamaan (5).png',
-'images/kebersamaan (6).png',
-'images/kebersamaan (7).png',
-'images/kebersamaan (8).png'
+'images/Kebersamaan.png',
+'images/Kebersamaan (2).png',
+'images/Kebersamaan (3).png',
+'images/Kebersamaan (4).png',
+'images/Kebersamaan (5).png',
+'images/Kebersamaan (6).png',
+'images/Kebersamaan (7).png',
+'images/Kebersamaan (8).png'
 
 ];
 
 let currentIndex = 0;
 function showSlide(){
 document.getElementById("kebersamaan-slider").src =
-Kebersamaan[currentIndex];
+kebersamaan[currentIndex];
 
 }
 
@@ -895,7 +895,7 @@ nextSlidePenyembahan();
 
 },5000);
 
-const komsel = [
+const Komsel = [
 
 'images2/KOMSEL.png',
 'images2/KOMSEL (2).png',
@@ -915,7 +915,7 @@ Komsel[currentKomsel];
 
 function nextSlideKomsel(){
 currentKomsel++;
-if(currentKomsel >= komsel.length){
+if(currentKomsel >= Komsel.length){
 currentKomsel = 0;
 }
 
