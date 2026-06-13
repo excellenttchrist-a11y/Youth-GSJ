@@ -1,1168 +1,1126 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Youth Germita Syalom Jakarta</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-
-html{
-scroll-behavior:smooth;
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-
-body{
-background:#f7f5f0;
-color:#222;
-}
-
-@font-face{
-	font-family: 'Sederahana';
-	src: url('index.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
-
-/* NAVBAR */
-
-nav{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:20px 5%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-z-index:1000;
-
-background:transparent;
-transition:0.3s;
-}
-
-nav.scrolled{
-background:rgba(0,0,0,0.9);
-backdrop-filter:blur(8px);
--webkit-backdrop-filter:blur(8px);
-box-shadow:0 5px 20px rgba(0,0,0,.25);
-}
-
-.logo{
-font-size:26px;
-font-weight:700;
-color:white;
-}
-
-nav svg{
-	display:inline-block;
-	margin-right:4px;
-}
-
-.logo{
-	display:inline-block;
-	margin-left:0;
-}
-
-nav ul{
-    display:flex;
-    list-style:none;
-    gap:12px;
-}
-
-.nav-right{
-	display:flex;
-	align-items:center;
-	gap:6px;
-	margin-left:auto;
-	margin-right:0;
-}
-
-nav ul li a{
-	padding:8px 12px;
-	border-radius:8px;
-	transition:background.2s,color .2s;
-}
-
-nav ul li a:hover{
-	background:#d39c2f;
-	color:#fff;
-}
-
-nav ul li a{
-    color:white;
-    text-decoration:none;
-    font-weight:500;
-}
-
-.btn-nav{
-    background:#d39c2f;
-    padding:12px 24px;
-    border-radius:30px;
-    color:white;
-    text-decoration:none;
-}
-
-/* HERO */
-
-.hero{
-height:100vh;
-background:
-linear-gradient(
-rgba(0,0,0,.45),
-rgba(0,0,0,.45)
-),
-url("index.png");
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-padding:0 8%;
-}
-
-.hero-content{
-    max-width:650px;
-    color:white;
-}
-
-.hero h1{
-    font-size:85px;
-    font-weight:800;
-    line-height:90px;
-	text-align: left;
-	text-shadow: 0 12px 30px rgba(0,0,0,0.45);
-}
-
-.hero h1 .come{
-	display:inline-block;
-	color: #fff;
-	font-weight: 800;
-	font-size:85px;
-	vertical-align:baseline;
-	margin-right:12px;
-}
-
-.hero h1 .as{
-	display:inline-block;
-	color:#d39c2f;
-	font-family: 'Sederahana', 'Poppins', sans-serif;
-	font-weight:700;
-	font-size:70px;
-	vertical-align:baseline;
-}
-
-.hero p{
-    font-size:22px;
-    margin-top:20px;
-    line-height:1.7;
-}
-
-.hero-buttons{
-    margin-top:35px;
-    display:flex;
-    gap:15px;
-}
-
-.btn-primary{
-    background:#d39c2f;
-    padding:15px 35px;
-    border-radius:40px;
-    text-decoration:none;
-    color:white;
-    font-weight:600;
-}
-
-.btn-secondary{
-    border:2px solid white;
-    padding:15px 35px;
-    border-radius:40px;
-    text-decoration:none;
-    color:white;
-}
-
-/* STATS */
-
-.stats{
-    width:90%;
-    max-width:1200px;
-    margin:80px auto;
-
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
-
-.stat-card{
-    background:#181818;
-    border:1px solid rgba(212,160,23,.15);
-    border-radius:20px;
-    padding:25px;
-    transition:.3s;
-}
-
-.stat-card:hover{
-    transform:translateY(-5px);
-    border-color:#D4A017;
-}
-
-.stat-row{
-    display:flex;
-    align-items:center;
-    gap:20px;
-}
-
-.stat-icon svg{
-    width:60px;
-    height:60px;
-
-    filter:
-    drop-shadow(0 0 8px rgba(212,160,23,.4));
-}
-
-.stat-info h2{
-    margin:0;
-    font-size:42px;
-    line-height:1;
-    color:#D4A017;
-}
-
-.stat-info p{
-    margin-top:8px;
-    color:#d8d8d8;
-    font-size:15px;
-}
-
-/* ABOUT */
-
-.about{
-padding:20px 8%;
-}
-
-.about-title{
-color:#d39c2f;
-font-weight:600;
-}
-
-.about h2{
-font-size:50px;
-margin-top:10px;
-}
-
-.about p{
-margin-top:20px;
-line-height:1.9;
-max-width:700px;
-}
-
-/* CARD TANPA FOTO */
-
-.features{
-margin-top:60px;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:25px;
-}
-
-.feature-card{
-background:white;
-padding:40px;
-border-radius:20px;
-text-align:center;
-box-shadow:0 5px 25px rgba(0,0,0,.05);
-transition:.3s;
-}
-
-.feature-card:hover{
-transform:translateY(-10px);
-}
-
-.icon{
-font-size:50px;
-margin-bottom:20px;
-}
-
-.feature-card h3{
-margin-bottom:10px;
-}
-
-.feature-card p{
-font-size:14px;
-line-height:1.7;
-}
-
-.slider-card{
-position:relative;
-width:100%;
-height:220px;
-overflow:hidden;
-border-radius:18px;
-margin-bottom:20px;
-}
-
-.slider-card img{
-width:100%;
-height:100%;
-object-fit:cover;
-display:block;
-}
-
-.prev,
-.next{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-
-width:42px;
-height:42px;
-
-border:none;
-border-radius:50%;
-
-background:rgba(0,0,0,.55);
-color:white;
-
-font-size:20px;
-cursor:pointer;
-transition:.3s;
-}
-
-.prev:hover,
-.next:hover{
-background:#D4A017;
-}
-
-.prev{
-left:10px;
-}
-
-.next{
-right:10px;
-}
-
-/* SCHEDULE */
-
-.schedule{
-padding:0 8% 100px;
-}
-
-.schedule h2{
-font-size:45px;
-margin-bottom:40px;
-text-align:center;
-}
-
-.schedule-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-max-width:1000px;
-margin:auto;
-}
-
-.schedule-card{
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 5px 25px rgba(0,0,0,.05);
-}
-
-.schedule-link{
-text-decoration:none;
-color:inherit;
-display:block;
-}
-
-.schedule-link:hover .schedule-card{
-transform:translateY(-5px);
-box-shadow:0 10px 30px rgba(0,0,0,.1);
-transition:.3s;
-cursor:pointer;
-}
-
-.schedule-card h3{
-margin-bottom:10px;
-color:#d39c2f;
-}
-.news-section{
-  padding:80px 8%;
-  background:#f7f5f0;
-  color:white;
-}
-
-.news-header{
-  text-align:center;
-  margin-bottom:40px;
-}
-
-.news-header h2{
-  font-size:42px;
-  color:#d39c2f;
-}
-
-.news-header p{
-  color:#000000;
-  margin-top:10px;
-}
-
-.news-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-}
-
-.news-card{
-  background:#ffffff;
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 10px 30px rgba(0,0,0,0.3);
-  transition:0.3s;
-}
-
-.news-card:hover{
-  transform:translateY(-8px);
-}
-
-.news-card img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
-}
-
-.news-content{
-  padding:20px;
-}
-
-.news-content h3{
-  color:#ffffff;
-  margin-bottom:10px;
-  font-size:18px;
-}
-
-.news-content p{
-  color:#000000;
-  font-size:14px;
-  line-height:1.6;
-}
-
-.news-content a{
-  display:inline-block;
-  margin-top:12px;
-  color:#d39c2f;
-  text-decoration:none;
-  font-weight:600;
-}
-
-.news-content a:hover{
-  text-decoration:underline;
-}
-
-footer{
-background:#111;
-color:white;
-text-align:center;
-padding:40px;
-}
-
-@media(max-width:900px){
-
-.hero h1{
-font-size:55px;
-line-height:60px;
-}
-
-.stats,
-.features,
-.schedule-grid{
-grid-template-columns:1fr;
-}
-
-}
-
-@media (max-width:768px){
-
-    /* sembunyikan menu desktop */
-    nav ul{
-        display:none;
-    }
-
-    /* sembunyikan tombol gabung */
-    .btn-nav{
-        display:none;
-    }
-
-    /* tampilkan hamburger */
-    .menu-toggle{
-        display:block;
-        font-size:30px;
-        color:white;
-        cursor:pointer;
-        margin-left:auto;
-    }
-
-    /* logo lebih kecil */
-    .logo{
-        font-size:18px !important;
-    }
-
-    nav svg{
-        width:35px;
-        height:35px;
-    }
-
-    /* rapikan navbar */
-    nav{
-        padding:20px 5%;
-    }
-
-    nav ul.active{
-        display:flex;
-        flex-direction:column;
-        position:absolute;
-        top:80px;
-        left:0;
-        width:100%;
-        background:rgba(0,0,0,0.95);
-        padding:20px;
-        gap:15px;
-    }
-
-@media (max-width:768px){
-
-.hero{
-    padding:0 6%;
-    align-items:center;
-}
-
-.hero-content{
-    max-width:100%;
-    text-align:left;
-}
-
-.hero h1{
-    font-size:56px !important;
-    line-height:58px !important;
-    margin-bottom:15px;
-}
-
-.hero h1 .come{
-    font-size:56px !important;
-    display:block;
-    margin-right:0;
-}
-
-.hero h1 .as{
-    font-size:48px !important;
-    display:block;
-}
-
-.hero p{
-    font-size:16px !important;
-    line-height:1.7;
-    max-width:420px;
-}
-
-.hero-buttons{
-    margin-top:25px;
-    display:flex;
-    flex-direction:row;
-    justify-content:flex-start;
-    gap:12px;
-}
-
-.btn-primary,
-.btn-secondary{
-    padding:12px 22px !important;
-    font-size:13px !important;
-}
-
-}
-
-}
-/* ===== NEWS PREVIEW ===== */
-.news-preview{
-    padding:80px 8%;
-}
-
-.news-preview h2{
-    font-size:45px;
-    margin-bottom:30px;
-}
-
-.news-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.news-card{
-    background:rgb(163, 65, 0);
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 5px 25px rgba(0,0,0,.08);
-    transition:0.3s;
-}
-
-.news-card:hover{
-    transform:translateY(-5px);
-}
-
-.news-card img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-}
-
-.news-card h3{
-    padding:15px;
-}
-
-.news-card p{
-    padding:0 15px 15px;
-    font-size:14px;
-    color:hsl(0, 0%, 0%);
-}
-
-.news-card a{
-    display:block;
-    padding:15px;
-    text-align:center;
-    background:#d39c2f;
-    color:rgb(255, 255, 255);
-    text-decoration:none;
-    font-weight:600;
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youth Germita Syalom Jakarta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --gold: #d39c2f;
+            --gold-dark: #D4A017;
+            --dark-bg: #181818;
+            --light-bg: #f7f5f0;
+            --dark-text: #222;
+            --light-text: #d8d8d8;
+            --border: rgba(212, 160, 23, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: var(--light-bg);
+            color: var(--dark-text);
+            margin: 0;
+            padding: 0;
+        }
+
+        @font-face {
+            font-family: 'Sederahana';
+            src: url('index.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* ===== NAVBAR ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: transparent;
+            transition: 0.3s;
+        }
+
+        nav.scrolled {
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 22px;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+        }
+
+        .logo img {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 4px;
+        }
+
+        .logo span {
+            letter-spacing: 0.02em;
+        }
+
+        nav svg {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 12px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-left: auto;
+        }
+
+        nav ul li a {
+            padding: 8px 12px;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        nav ul li a:hover {
+            background: var(--gold);
+            color: #fff;
+        }
+
+        .btn-nav {
+            background: var(--gold);
+            padding: 12px 24px;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .btn-nav:hover {
+            opacity: 0.9;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            margin-left: auto;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("index.png");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+        }
+
+        .hero-content {
+            max-width: 650px;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 85px;
+            font-weight: 800;
+            line-height: 90px;
+            text-align: left;
+            text-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+        }
+
+        .hero h1 .come {
+            display: inline-block;
+            color: #fff;
+            font-weight: 800;
+            font-size: 85px;
+            margin-right: 12px;
+        }
+
+        .hero h1 .as {
+            display: inline-block;
+            color: var(--gold);
+            font-family: 'Sederahana', 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 70px;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-top: 20px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            padding: 15px 35px;
+            border-radius: 40px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        .btn-secondary {
+            border: 2px solid white;
+            padding: 15px 35px;
+            border-radius: 40px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* ===== STATS ===== */
+        .stats {
+            width: 90%;
+            max-width: 1200px;
+            margin: 80px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .stat-card {
+            background: var(--dark-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-dark);
+        }
+
+        .stat-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .stat-icon svg {
+            width: 60px;
+            height: 60px;
+            filter: drop-shadow(0 0 8px rgba(212, 160, 23, 0.4));
+        }
+
+        .stat-info h2 {
+            margin: 0;
+            font-size: 42px;
+            line-height: 1;
+            color: var(--gold-dark);
+        }
+
+        .stat-info p {
+            margin-top: 8px;
+            color: var(--light-text);
+            font-size: 15px;
+        }
+
+        /* ===== ABOUT ===== */
+        .about {
+            padding: 20px 8%;
+        }
+
+        .about-title {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about h2 {
+            font-size: 50px;
+            margin-top: 10px;
+            color: var(--dark-text);
+        }
+
+        .about p {
+            margin-top: 20px;
+            line-height: 1.9;
+            max-width: 700px;
+            color: var(--dark-text);
+        }
+
+        /* ===== FEATURES ===== */
+        .features {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: var(--dark-text);
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #666;
+        }
+
+        .slider-card {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            border-radius: 18px;
+            margin-bottom: 20px;
+        }
+
+        .slider-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 42px;
+            height: 42px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.55);
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background: var(--gold-dark);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* ===== SCHEDULE ===== */
+        .schedule {
+            padding: 0 8% 100px;
+        }
+
+        .schedule h2 {
+            font-size: 45px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--dark-text);
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .schedule-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .schedule-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .schedule-link:hover .schedule-card,
+        .schedule-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .schedule-card h3 {
+            margin-bottom: 10px;
+            color: var(--gold);
+            font-size: 18px;
+        }
+
+        .schedule-card p {
+            color: var(--dark-text);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .schedule-card small {
+            color: #999;
+            font-size: 12px;
+        }
+
+        /* ===== NEWS SECTION ===== */
+        .news-section {
+            padding: 80px 8%;
+            background: var(--light-bg);
+            color: var(--dark-text);
+        }
+
+        .news-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .news-header h2 {
+            font-size: 42px;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .news-header p {
+            color: var(--dark-text);
+            font-size: 16px;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 20px;
+        }
+
+        .news-content h3 {
+            color: var(--dark-text);
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .news-content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .news-content a {
+            display: inline-block;
+            margin-top: 12px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .news-content a:hover {
+            color: var(--gold-dark);
+            text-decoration: underline;
+        }
+
+        /* ====== Renungan Section ===== */
+
+        .renungan-card {
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+        }
+
+        .judul {
+            font-size: 28px;
+            font-weight: 700;
+            color: #222;
+        }
+
+        .ayat {
+            color: #d39c2f;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .isi {
+            margin-top: 20px;
+            line-height: 1.8;
+            color: #444;
+            text-align: center;
+        }
+
+        .penulis {
+            margin-top: 25px;
+            color: #888;
+            font-size: 14px;
+        }
+
+        .loading {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark-bg);
+            color: var(--light-text);
+            text-align: center;
+            padding: 50px 40px;
+            font-size: 14px;
+            margin-top: 80px;
+            border-top: 1px solid var(--border);
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .hero h1 {
+                font-size: 55px;
+                line-height: 60px;
+            }
+
+            .stats,
+            .schedule-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 18px;
+            }
+
+            nav svg {
+                width: 35px;
+                height: 35px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            nav ul.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.95);
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .btn-nav {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero {
+                padding: 0 6%;
+                align-items: center;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 56px !important;
+                line-height: 58px !important;
+                margin-bottom: 15px;
+            }
+
+            .hero h1 .come {
+                font-size: 56px !important;
+                display: block;
+                margin-right: 0;
+            }
+
+            .hero h1 .as {
+                font-size: 48px !important;
+                display: block;
+            }
+
+            .hero p {
+                font-size: 16px !important;
+                max-width: 420px;
+            }
+
+            .hero-buttons {
+                margin-top: 25px;
+                gap: 12px;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                padding: 12px 22px !important;
+                font-size: 13px !important;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+                margin-top: 40px;
+            }
+
+            .schedule-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .news-section {
+                padding: 60px 6%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 36px !important;
+                line-height: 40px !important;
+            }
+
+            .hero p {
+                font-size: 14px !important;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                padding: 10px 18px !important;
+                font-size: 12px !important;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .news-header h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
 </head>
-<script>
-window.addEventListener("scroll", function(){
-    const nav = document.querySelector("nav");
 
-    if(window.scrollY > 50){
-        nav.classList.add("scrolled");
-    }else{
-        nav.classList.remove("scrolled");
-    }
-});
-</script>
 <body>
-
-<nav>
-<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-    <g fill="#D9A441">
-        <rect x="25" y="5" width="10" height="50" rx="2"/>
-        <rect x="10" y="20" width="40" height="10" rx="2"/>
-    </g>
-</svg>
-<div class="logo">
-Youth Germita Syalom
-</div>
-
-<div class="nav-right">
-<ul>
-<li><a href="#beranda">Beranda</a></li>
-<li><a href="#tentang">Tentang</a></li>
-<li><a href="#jadwal">Jadwal</a></li>
-<li><a href="#berita">Berita</a></li>
-<li><a href="#">Kontak</a></li>
-</ul>
-
-<a href="https://whatsapp.com/channel/0029VbCsYRh47Xe4QPcn9I2u" class="btn-nav">
-Gabung
-</a>
-
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
-</nav>
-
-<section class="hero" id="beranda">
-
-<div class="hero-content">
-
-<h1>
-	<span class="come">Come</span>
-	<span class="as">As You Are</span>
-</h1>
-
-<p>
-Tidak perlu menjadi sempurna untuk datang.
-Mari bertumbuh bersama dalam iman,
-kasih dan tujuan yang Tuhan siapkan.
-</p>
-
-<div class="hero-buttons">
-
-<a href="https://www.instagram.com/youthgsj.official?igsh=dnk1aXF2ZzJ0d2x5" class="btn-primary">
-Kenali Kami
-</a>
-
-<a href="#" class="btn-secondary">
-Coming Soon (web GSJ)
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="stats">
-    <!-- PEMUDA AKTIF -->
-    <div class="stat-card">
-        <div class="stat-row">
-
-            <div class="stat-icon">
-                <svg width="70" height="70" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="22" cy="20" r="6" stroke="#D4A017" stroke-width="2.5"/>
-                <circle cx="42" cy="20" r="6" stroke="#D4A017" stroke-width="2.5"/>
-                <path d="M12 46C12 38 17 34 22 34C27 34 32 38 32 46" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
-                <path d="M32 46C32 38 37 34 42 34C47 34 52 38 52 46" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
-                </svg>
-            </div>
-
-            <div class="stat-info">
-                <h2>10+</h2>
-                <p>Pemuda Aktif</p>
-            </div>
-
+    <nav>
+        <div class="logo">
+            <img src="logo/logoyouth.png" alt="Youth Germita Syalom Logo">
+            <span>Youth Germita Syalom</span>
         </div>
-    </div>
-
-    <!-- KOMUNITAS AKTIF -->
-    <div class="stat-card">
-        <div class="stat-row">
-
-            <div class="stat-icon">
-                <svg width="70" height="70" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="32" cy="32" r="22" stroke="#D4A017" stroke-width="2.5"/>
-                <circle cx="32" cy="22" r="4" stroke="#D4A017" stroke-width="2.5"/>
-                <circle cx="20" cy="38" r="4" stroke="#D4A017" stroke-width="2.5"/>
-                <circle cx="44" cy="38" r="4" stroke="#D4A017" stroke-width="2.5"/>
-                <path d="M32 26V34" stroke="#D4A017" stroke-width="2.5"/>
-                <path d="M24 36L29 33" stroke="#D4A017" stroke-width="2.5"/>
-                <path d="M40 36L35 33" stroke="#D4A017" stroke-width="2.5"/>
-                </svg>
-            </div>
-
-            <div class="stat-info">
-                <h2>4+</h2>
-                <p>Pengurus</p>
-            </div>
-
+        <div class="nav-right">
+            <ul>
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#jadwal">Jadwal</a></li>
+                <li><a href="#berita">Berita</a></li>
+                <li><a href="#renungan-section">Renungan</a></li>
+            </ul>
+            <a href="https://whatsapp.com/channel/0029VbCsYRh47Xe4QPcn9I2u" class="btn-nav">Gabung</a>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         </div>
-    </div>
+    </nav>
 
-    <!-- PELAYANAN AKTIF -->
-    <div class="stat-card">
-        <div class="stat-row">
-
-            <div class="stat-icon">
-                <svg width="70" height="70" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M32 52L16 36C12 32 12 24 17 19C22 14 29 15 32 20C35 15 42 14 47 19C52 24 52 32 48 36L32 52Z"
-                 stroke="#D4A017"
-                 stroke-width="2.5"
-                 stroke-linejoin="round"/>
-                <path d="M24 30H40" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
-                <path d="M32 22V38" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
-                </svg>
+    <section class="hero" id="beranda">
+        <div class="hero-content">
+            <h1>
+                <span class="come">Come</span>
+                <span class="as">As You Are</span>
+            </h1>
+            <p>Tidak perlu menjadi sempurna untuk datang. Mari bertumbuh bersama dalam iman, kasih dan tujuan yang Tuhan
+                siapkan.</p>
+            <div class="hero-buttons">
+                <a href="https://www.instagram.com/youthgsj.official?igsh=dnk1aXF2ZzJ0d2x5" class="btn-primary">Kenali
+                    Kami</a>
+                <a href="#" class="btn-secondary">Coming Soon (web GSJ)</a>
             </div>
-
-            <div class="stat-info">
-                <h2>15+</h2>
-                <p>Pelayanan Aktif</p>
-            </div>
-
         </div>
-    </div>
+    </section>
 
-    <!-- IBADAH YOUTH -->
-    <div class="stat-card">
-        <div class="stat-row">
-
-            <div class="stat-icon">
-                <svg width="70" height="70" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="32" cy="32" r="22" stroke="#D4A017" stroke-width="2.5"/>
-                <path d="M32 16V48" stroke="#D4A017" stroke-width="3" stroke-linecap="round"/>
-                <path d="M22 26H42" stroke="#D4A017" stroke-width="3" stroke-linecap="round"/>
-                </svg>
+    <section class="stats">
+        <div class="stat-card">
+            <div class="stat-row">
+                <div class="stat-icon">
+                    <svg width="70" height="70" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="22" cy="20" r="6" stroke="#D4A017" stroke-width="2.5" />
+                        <circle cx="42" cy="20" r="6" stroke="#D4A017" stroke-width="2.5" />
+                        <path d="M12 46C12 38 17 34 22 34C27 34 32 38 32 46" stroke="#D4A017" stroke-width="2.5"
+                            stroke-linecap="round" />
+                        <path d="M32 46C32 38 37 34 42 34C47 34 52 38 52 46" stroke="#D4A017" stroke-width="2.5"
+                            stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <h2>10+</h2>
+                    <p>Pemuda Aktif</p>
+                </div>
             </div>
-
-            <div class="stat-info">
-                <h2>Minggu</h2>
-                <p>Ibadah Youth</p>
-            </div>
-
         </div>
-    </div>
-
-</section>
-
-<section class="about" id="tentang">
-
-<p class="about-title">TENTANG KAMI</p>
-
-<h2>Komunitas Youth yang Hidup & Bertumbuh</h2>
-
-<p>
-Kami adalah generasi yang percaya,
-diberkati, dan dipanggil untuk membawa
-terang Kristus di mana pun kami berada.
-</p>
-
-<div class="features">
-<div class="feature-card">
-<div class="slider-card">
-
-<button class="prev" onclick="prevSlide()">
-❮
-</button>
-<img
-id="kebersamaan-slider"
-src="images/Kebersamaan.png"
-alt="kebersamaan">
-<button class="next" onclick="nextSlide()">
-❯
-</button>
-</div>
-<h3>🤝 Kebersamaan</h3>
-
-<p>
-Bertumbuh bersama dalam komunitas yang sehat.
-</p>
-
-</div>
-<div class="feature-card">
-<div class="slider-card">
-<button class="prev" onclick="prevSlidePenyembahan()">
-❮
-</button>
-<img
-id="penyembahan-slider"
-src="images1/PENYEMBAHAN.png"
-alt="Penyembahan">
-<button class="next" onclick="nextSlidePenyembahan()">
-❯
-</button>
-</div>
-<h3>🎵 Penyembahan</h3>
-<p>
-Memuji Tuhan dengan sukacita setiap minggu.
-</p>
-
-</div>
-
-<div class="feature-card">
-<div class="slider-card">
-<button class="prev" onclick="prevSlideKomsel()">
-❮
-</button>
-<img
-id="komsel-slider"
-src="images2/KOMSEL.png"
-alt="Komsel">
-<button class="next" onclick="nextSlideKomsel()">
-❯
-</button>
-</div>
-<h3>📖 Komsel</h3>
-<p>
-Belajar firman Tuhan secara mendalam.
-</p>
-
-</div>
-<div class="feature-card">
-<div class="slider-card">
-<button class="prev" onclick="prevSlideActivity()">
-❮
-</button>
-<img
-id="activity-slider"
-src="images3/Aktivitas.png"
-alt="Activity">
-<button class="next" onclick="nextSlideActivity()">
-❯
-</button>
-</div>
-<h3>🎉 Activity</h3>
-<p>
-Membangun relasi dan persahabatan baru.
-</p>
-
-</div>
-
-
-</section>
-
-<section class="schedule" id="jadwal">
-
-<h2>Bergabung di Setiap Kesempatan Berharga</h2>
-
-<div class="schedule-grid">
-
-<a href="https://docs.google.com/spreadsheets/u/0/d/1GmxYMQ2YeE6RC12lFGoP8zVJXy5OLkDcWZHYMD0jzDU/htmlview?hl=id#gid=0"
-   target="_blank"
-   class="schedule-link">
-
-<div class="schedule-card">
-<h3>Ibadah Youth</h3>
-<p>Setiap Minggu<br>13.30 WIB<br><small>Klik untuk lihat jadwal</small></p>
-</div>
-
-</a>
-
-<div class="schedule-card">
-<h3>Katekisasi</h3>
-<p>Setiap Mingguu<br>15.00 WIB</p>
-</div>
-
-<div class="schedule-card">
-<h3>Youth Gathering</h3>
-<p>Setiap Sabtu<br>19.00 WIB</p>
-</div>
-
-</div>
-<!-- ===================== BERITA PREMIUM ===================== -->
-<section id="berita" class="news-section">
-
-  <div class="news-header">
-    <h2>Berita Gereja</h2>
-    <p>Update terbaru kegiatan & informasi Youth</p>
-  </div>
-
-  <div class="news-grid">
-
-    <!-- CARD 1 -->
-    <div class="news-card">
-      <img src="Natal/natal.jpeg" alt="Natal GSJ">
-      <div class="news-content">
-        <h3>Natal GSJ 2026</h3>
-        <p>Keseruan ibadah natal dengan tema "Allah hadir untuk menyelamatkan keluarga" (Bdk. Matius 1:21-24).</p>
-        <a href="https://youthgsj.github.io/News/#natal">Selengkapnya</a>
-      </div>
-    </div>
-
-    <!-- CARD 2 -->
-    <div class="news-card">
-      <img src="Paskah/paskah.jpeg" alt="Paskah 2026">
-      <div class="news-content">
-        <h3>Paskah 2026</h3>
-        <p>"Kristus Bangkit Membarui Kemanusiaan Kita" (2 Korintus 5:17)</p>
-        <a href="https://youthgsj.github.io/News/#paskah">Selengkapnya</a>
-      </div>
-    </div>
-
-    <!-- CARD 3 -->
-    <div class="news-card">
-      <img src="Pelayanan/mutasi.jpeg" alt="Mutasi Pendeta GSJ">
-      <div class="news-content">
-        <h3>Mutasi Pdt. Osvaldo Metusalach 2026</h3>
-        <p>Memberkati sesama melalui aksi nyata kasih dan pelayanan.</p>
-        <a href="https://youthgsj.github.io/News/#mutasi">Selengkapnya</a>
-      </div>
-    </div>
 
-  </div>
-</section>
-
-<footer>
-© 2026 Youth Germita Syalom Jakarta
-</footer>
-
-<script>
-
-const kebersamaan = [
-
-'images/Kebersamaan.png',
-'images/Kebersamaan (2).png',
-'images/Kebersamaan (3).png',
-'images/Kebersamaan (4).png',
-'images/Kebersamaan (5).png',
-'images/Kebersamaan (6).png',
-'images/Kebersamaan (7).png',
-'images/Kebersamaan (8).png'
-
-];
-
-let currentIndex = 0;
-function showSlide(){
-document.getElementById("kebersamaan-slider").src =
-kebersamaan[currentIndex];
-
-}
-
-function nextSlide(){
-currentIndex++;
-if(currentIndex >= kebersamaan.length){
-currentIndex = 0;
-}
-
-showSlide();
-
-}
-
-function prevSlide(){
-currentIndex--;
-if(currentIndex < 0){
-currentIndex = kebersamaan.length - 1;
-}
-
-showSlide();
-
-}
-
-setInterval(function(){
-nextSlide();
-},5000);
-
-const PENYEMBAHAN = [
-
-'images1/PENYEMBAHAN.png',
-'images1/PENYEMBAHAN (2).png',
-'images1/PENYEMBAHAN (3).png',
-'images1/PENYEMBAHAN (4).png',
-'images1/PENYEMBAHAN (5).png',
-
-];
-
-let currentPenyembahan = 0;
-function showSlidePenyembahan(){
-document.getElementById("penyembahan-slider").src =
-PENYEMBAHAN[currentPenyembahan];
-
-}
-
-function nextSlidePenyembahan(){
-currentPenyembahan++;
-if(currentPenyembahan >= PENYEMBAHAN.length){
-currentPenyembahan = 0;
-}
-
-showSlidePenyembahan();
-
-}
-
-function prevSlidePenyembahan(){
-currentPenyembahan--;
-if(currentPenyembahan < 0){
-currentPenyembahan = PENYEMBAHAN.length - 1;
-}
-
-showSlidePenyembahan();
-
-}
-
-setInterval(function(){
-nextSlidePenyembahan();
-
-},5000);
-
-const komsel = [
-
-'images2/komsel.png',
-'images2/komsel (2).png',
-'images2/komsel (3).png',
-'images2/komsel (4).png',
-'images2/komsel (5).png',
-'images2/komsel (6).png',
-
-];
-
-let currentKomsel = 0;
-function showSlideKomsel(){
-document.getElementById("komsel-slider").src =
-komsel[currentKomsel];
-
-}
-
-function nextSlideKomsel(){
-currentKomsel++;
-if(currentKomsel >= Komsel.length){
-currentKomsel = 0;
-}
-
-showSlideKomsel();
-
-}
-
-function prevSlideKomsel(){
-currentKomsel--;
-if(currentKomsel < 0){
-currentKomsel = komsel.length - 1;
-}
-
-showSlideKomsel();
-
-}
-
-setInterval(function(){
-nextSlideKomsel();
-
-},5000);
-
-const activity = [
-
-'images3/Aktivitas.png',
-'images3/Aktivitas (2).png',
-'images3/Aktivitas (3).png',
-'images3/Aktivitas (4).png',
-'images3/Aktivitas (5).png',
-'images3/Aktivitas (6).png'
-
-];
-
-let currentActivity = 0;
-function showSlideActivity(){
-document.getElementById("activity-slider").src =
-activity[currentActivity];
-
-}
-
-function nextSlideActivity(){
-currentActivity++;
-if(currentActivity >= activity.length){
-currentActivity = 0;
-}
-
-showSlideActivity();
-
-}
-
-function prevSlideActivity(){
-currentActivity--;
-if(currentActivity < 0){
-currentActivity = activity.length - 1;
-}
-
-showSlideActivity();
-
-}
-
-setInterval(function(){
-nextSlideActivity();
-
-},5000);
-
-</script>
-
-<script>
-
-function toggleMenu(){
-
-document.querySelector("nav ul")
-.classList.toggle("active");
-
-}
-
-</script>
+        <div class="stat-card">
+            <div class="stat-row">
+                <div class="stat-icon">
+                    <svg width="70" height="70" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="32" cy="32" r="22" stroke="#D4A017" stroke-width="2.5" />
+                        <circle cx="32" cy="22" r="4" stroke="#D4A017" stroke-width="2.5" />
+                        <circle cx="20" cy="38" r="4" stroke="#D4A017" stroke-width="2.5" />
+                        <circle cx="44" cy="38" r="4" stroke="#D4A017" stroke-width="2.5" />
+                        <path d="M32 26V34" stroke="#D4A017" stroke-width="2.5" />
+                        <path d="M24 36L29 33" stroke="#D4A017" stroke-width="2.5" />
+                        <path d="M40 36L35 33" stroke="#D4A017" stroke-width="2.5" />
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <h2>4+</h2>
+                    <p>Pengurus</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-row">
+                <div class="stat-icon">
+                    <svg width="70" height="70" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M32 52L16 36C12 32 12 24 17 19C22 14 29 15 32 20C35 15 42 14 47 19C52 24 52 32 48 36L32 52Z"
+                            stroke="#D4A017" stroke-width="2.5" stroke-linejoin="round" />
+                        <path d="M24 30H40" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round" />
+                        <path d="M32 22V38" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <h2>15+</h2>
+                    <p>Pelayanan Aktif</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-row">
+                <div class="stat-icon">
+                    <svg width="70" height="70" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="32" cy="32" r="22" stroke="#D4A017" stroke-width="2.5" />
+                        <path d="M32 16V48" stroke="#D4A017" stroke-width="3" stroke-linecap="round" />
+                        <path d="M22 26H42" stroke="#D4A017" stroke-width="3" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div class="stat-info">
+                    <h2>Minggu</h2>
+                    <p>Ibadah Youth</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="tentang">
+        <p class="about-title">TENTANG KAMI</p>
+        <h2>Komunitas Youth yang Hidup & Bertumbuh</h2>
+        <p>Kami adalah generasi yang percaya, diberkati, dan dipanggil untuk membawa terang Kristus di mana pun kami
+            berada.</p>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="slider-card">
+                    <button class="prev" onclick="prevSlide()">❮</button>
+                    <img id="kebersamaan-slider" src="images/Kebersamaan.png" alt="Kebersamaan">
+                    <button class="next" onclick="nextSlide()">❯</button>
+                </div>
+                <h3>🤝 Kebersamaan</h3>
+                <p>Bertumbuh bersama dalam komunitas yang sehat.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="slider-card">
+                    <button class="prev" onclick="prevSlidePenyembahan()">❮</button>
+                    <img id="penyembahan-slider" src="images1/PENYEMBAHAN.png" alt="Penyembahan">
+                    <button class="next" onclick="nextSlidePenyembahan()">❯</button>
+                </div>
+                <h3>🎵 Penyembahan</h3>
+                <p>Memuji Tuhan dengan sukacita setiap minggu.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="slider-card">
+                    <button class="prev" onclick="prevSlideKomsel()">❮</button>
+                    <img id="komsel-slider" src="images2/KOMSEL.png" alt="Komsel">
+                    <button class="next" onclick="nextSlideKomsel()">❯</button>
+                </div>
+                <h3>📖 Komsel</h3>
+                <p>Belajar firman Tuhan secara mendalam.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="slider-card">
+                    <button class="prev" onclick="prevSlideActivity()">❮</button>
+                    <img id="activity-slider" src="images3/Aktivitas.png" alt="Aktivitas">
+                    <button class="next" onclick="nextSlideActivity()">❯</button>
+                </div>
+                <h3>🎉 Activity</h3>
+                <p>Membangun relasi dan persahabatan baru.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="schedule" id="jadwal">
+        <h2>Bergabung di Setiap Kesempatan Berharga</h2>
+        <div class="schedule-grid">
+            <a href="https://docs.google.com/spreadsheets/u/0/d/1GmxYMQ2YeE6RC12lFGoP8zVJXy5OLkDcWZHYMD0jzDU/htmlview?hl=id#gid=0"
+                target="_blank" class="schedule-link">
+                <div class="schedule-card">
+                    <h3>Ibadah Youth</h3>
+                    <p>Setiap Minggu<br>13.30 WIB<br><small>Klik untuk lihat jadwal</small></p>
+                </div>
+            </a>
+            <div class="schedule-card">
+                <h3>Katekisasi</h3>
+                <p>Setiap Minggu<br>15.00 WIB</p>
+            </div>
+            <div class="schedule-card">
+                <h3>Youth Gathering</h3>
+                <p>Setiap Sabtu<br>19.00 WIB</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="berita" class="news-section">
+        <div class="news-header">
+            <h2>Berita Gereja</h2>
+            <p>Update terbaru kegiatan & informasi Youth</p>
+        </div>
+        <div class="news-grid">
+            <div class="news-card">
+                <img src="Natal/natal.jpeg" alt="Natal GSJ">
+                <div class="news-content">
+                    <h3>Natal GSJ 2026</h3>
+                    <p>Keseruan ibadah natal dengan tema "Allah hadir untuk menyelamatkan keluarga" (Bdk. Matius
+                        1:21-24).</p>
+                    <a href="file:///c%3A/Users/Erablue/OneDrive/Desktop/web%20pemuda/news1.html#natal">Selengkapnya</a>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="Paskah/paskah.jpeg" alt="Paskah 2026">
+                <div class="news-content">
+                    <h3>Paskah 2026</h3>
+                    <p>"Kristus Bangkit Membarui Kemanusiaan Kita" (2 Korintus 5:17)</p>
+                    <a
+                        href="file:///c%3A/Users/Erablue/OneDrive/Desktop/web%20pemuda/news1.html#paskah">Selengkapnya</a>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="Pelayanan/mutasi.jpeg" alt="Mutasi Pendeta GSJ">
+                <div class="news-content">
+                    <h3>Mutasi Pdt. Osvaldo Metusalach 2026</h3>
+                    <p>Memberkati sesama melalui aksi nyata kasih dan pelayanan.</p>
+                    <a
+                        href="file:///c%3A/Users/Erablue/OneDrive/Desktop/web%20pemuda/news1.html#mutasi">Selengkapnya</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="renungan-section" style="padding: 80px 8%; background: var(--light-bg);">
+        <h2 style="text-align: center; font-size: 42px; color: var(--gold); margin-bottom: 30px; font-weight: 700;">Renungan Harian</h2>
+        <div id="renungan" class="renungan-card">
+            <div class="loading">Memuat Renungan...</div>
+        </div>
+    </section>
+
+    <script>
+        /* ===== NAVBAR SCROLL ===== */
+        window.addEventListener("scroll", function () {
+            const nav = document.querySelector("nav");
+            if (window.scrollY > 50) {
+                nav.classList.add("scrolled");
+            } else {
+                nav.classList.remove("scrolled");
+            }
+        });
+
+        /* ===== TOGGLE MENU ===== */
+        function toggleMenu() {
+            document.querySelector("nav ul").classList.toggle("active");
+        }
+
+        /* ===== KEBERSAMAAN SLIDER ===== */
+        const kebersamaan = [
+            'images/Kebersamaan.png',
+            'images/Kebersamaan (2).png',
+            'images/Kebersamaan (3).png',
+            'images/Kebersamaan (4).png',
+            'images/Kebersamaan (5).png',
+            'images/Kebersamaan (6).png',
+            'images/Kebersamaan (7).png',
+            'images/Kebersamaan (8).png'
+        ];
+
+        let currentKebersamaan = 0;
+
+        function showSlide() {
+            document.getElementById("kebersamaan-slider").src = kebersamaan[currentKebersamaan];
+        }
+
+        function nextSlide() {
+            currentKebersamaan = (currentKebersamaan + 1) % kebersamaan.length;
+            showSlide();
+        }
+
+        function prevSlide() {
+            currentKebersamaan = (currentKebersamaan - 1 + kebersamaan.length) % kebersamaan.length;
+            showSlide();
+        }
+
+        setInterval(nextSlide, 5000);
+
+        /* ===== PENYEMBAHAN SLIDER ===== */
+        const penyembahan = [
+            'images1/PENYEMBAHAN.png',
+            'images1/PENYEMBAHAN (2).png',
+            'images1/PENYEMBAHAN (3).png',
+            'images1/PENYEMBAHAN (4).png',
+            'images1/PENYEMBAHAN (5).png'
+        ];
+
+        let currentPenyembahan = 0;
+
+        function showSlidePenyembahan() {
+            document.getElementById("penyembahan-slider").src = penyembahan[currentPenyembahan];
+        }
+
+        function nextSlidePenyembahan() {
+            currentPenyembahan = (currentPenyembahan + 1) % penyembahan.length;
+            showSlidePenyembahan();
+        }
+
+        function prevSlidePenyembahan() {
+            currentPenyembahan = (currentPenyembahan - 1 + penyembahan.length) % penyembahan.length;
+            showSlidePenyembahan();
+        }
+
+        setInterval(nextSlidePenyembahan, 5000);
+
+        /* ===== KOMSEL SLIDER ===== */
+        const komsel = [
+            'images2/KOMSEL.png',
+            'images2/KOMSEL (2).png',
+            'images2/KOMSEL (3).png',
+            'images2/KOMSEL (4).png',
+            'images2/KOMSEL (5).png',
+            'images2/KOMSEL (6).png'
+        ];
+
+        let currentKomsel = 0;
+
+        function showSlideKomsel() {
+            document.getElementById("komsel-slider").src = komsel[currentKomsel];
+        }
+
+        function nextSlideKomsel() {
+            currentKomsel = (currentKomsel + 1) % komsel.length;
+            showSlideKomsel();
+        }
+
+        function prevSlideKomsel() {
+            currentKomsel = (currentKomsel - 1 + komsel.length) % komsel.length;
+            showSlideKomsel();
+        }
+
+        setInterval(nextSlideKomsel, 5000);
+
+        /* ===== ACTIVITY SLIDER ===== */
+        const activity = [
+            'images3/Aktivitas.png',
+            'images3/Aktivitas (2).png',
+            'images3/Aktivitas (3).png',
+            'images3/Aktivitas (4).png',
+            'images3/Aktivitas (5).png',
+            'images3/Aktivitas (6).png'
+        ];
+
+        let currentActivity = 0;
+
+        function showSlideActivity() {
+            document.getElementById("activity-slider").src = activity[currentActivity];
+        }
+
+        function nextSlideActivity() {
+            currentActivity = (currentActivity + 1) % activity.length;
+            showSlideActivity();
+        }
+
+        function prevSlideActivity() {
+            currentActivity = (currentActivity - 1 + activity.length) % activity.length;
+            showSlideActivity();
+        }
+
+        setInterval(nextSlideActivity, 5000);
+    </script>
+
+    <script>
+        const SHEET_ID = "1S9z8pyTmzbkaVYfO4clYYLLLVraSMooj3G9PvVSW_yM";
+        const API_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json`;
+
+        async function loadRenungan() {
+            const container = document.getElementById("renungan");
+            try {
+                const res = await fetch(API_URL);
+                const text = await res.text();
+                const jsonText = text.replace(/^[^\(]*\(|\);?$/g, '');
+                const payload = JSON.parse(jsonText);
+                const table = payload.table;
+
+                if (!table || !table.rows || table.rows.length === 0) {
+                    container.innerHTML = "<h3>Belum ada renungan.</h3>";
+                    return;
+                }
+
+                const cols = table.cols.map(c => (c.label || c.id || '').trim());
+                const rows = table.rows.map(r => {
+                    const obj = {};
+                    (r.c || []).forEach((cell, i) => {
+                        const key = cols[i] || `col_${i}`;
+                        obj[key] = cell && cell.v != null ? cell.v : '';
+                    });
+                    return obj;
+                });
+
+                const latest = rows[rows.length - 1];
+                const titleKey = Object.keys(latest).find(k => /judul|title/i.test(k)) || Object.keys(latest)[0];
+                const verseKey = Object.keys(latest).find(k => /ayat|verse/i.test(k)) || Object.keys(latest)[1];
+                const contentKey = Object.keys(latest).find(k => /isi|content|body|text/i.test(k)) || Object.keys(latest)[2];
+                const authorKey = Object.keys(latest).find(k => /penulis|author/i.test(k)) || Object.keys(latest)[3];
+
+                container.innerHTML = `
+            <div class="judul">${latest[titleKey] || 'Renungan Harian'}</div>
+            <div class="ayat">${latest[verseKey] || ''}</div>
+            <div class="isi">${latest[contentKey] || ''}</div>
+            <div class="penulis">${latest[authorKey] || ''}</div>
+        `;
+            } catch (err) {
+                console.error(err);
+                container.innerHTML = `<h3>Gagal mengambil data.</h3><p>Periksa Sheet ID atau koneksi.</p>`;
+            }
+        }
+
+        loadRenungan();
+
+    </script>
+
+    <footer>
+        <p>© 2026 Youth Germita Syalom Jakarta</p>
+        <p style="margin-top: 10px; font-size: 12px; opacity: 0.8;">Komunitas Youth yang Hidup & Bertumbuh dalam Kristus</p>
+    </footer>
 
 </body>
+
 </html>
